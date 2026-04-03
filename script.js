@@ -73,7 +73,7 @@ function filterMenu(category, event) {
 
 // Opens Google Maps in a new tab
 function openMap() {
-    window.open('https://www.google.com/maps', '_blank');
+    window.open('https://maps.app.goo.gl/ALEvUc21nsCSx7n49', '_blank');
 }
 
 // Mobile menu toggle logic
