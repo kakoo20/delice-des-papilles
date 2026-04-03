@@ -800,32 +800,41 @@
         }
 
         /* Responsive */
-        @media (max-width: 968px) {
-            .hero-container, .about-container, .info-container {
-                grid-template-columns: 1fr;
-            }
+       @media (max-width: 968px) {
+    .nav-container {
+        position: relative; /* This keeps the menu anchored to the nav bar */
+    }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+    .nav-links {
+        display: none; 
+        /* Position it absolutely so it doesn't push the logo */
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: white;
+        flex-direction: column;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
 
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
+    .nav-links.active {
+        display: flex; /* Shown only when toggled */
+    }
 
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
 
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: flex;
-            }
-        }
-
+    .logo {
+        font-size: 1.2rem; /* Shorter font size so it doesn't wrap on small screens */
+        max-width: 70%;
+    }
+}
         @media (max-width: 600px) {
             .hero-buttons {
                 flex-direction: column;
