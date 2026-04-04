@@ -939,3 +939,22 @@ footer {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transform: scale(1.05);
 }
+.logo-img {
+    height: 40px; /* Adjust this to match your preferred size */
+    width: auto;
+    object-fit: contain;
+    border-radius: 50%; /* Keeps it circular like the design */
+    border: 1px solid var(--secondary); /* Optional: adds a thin gold border */
+}
+
+/* Ensure the logo and text stay centered together */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
