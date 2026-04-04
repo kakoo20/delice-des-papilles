@@ -857,3 +857,85 @@ footer {
 .social-links a:hover .fa-tiktok {
     color: #00f2ea;
 }
+/* Reviews Section */
+.reviews {
+    padding: 6rem 5%;
+    background: var(--light);
+}
+
+.reviews-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+}
+
+.review-stars {
+    color: #FFD700;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.review-text {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.review-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.user-info strong {
+    display: block;
+    color: var(--dark);
+}
+
+.user-info span {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.google-badge-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.google-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.google-badge:hover {
+    background: #f8f8f8;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: scale(1.05);
+}
