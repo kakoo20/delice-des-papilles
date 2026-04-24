@@ -320,6 +320,7 @@ body.menu-open {
 
 .nav-links a {
     position: relative;
+    display: inline-block; /* <-- ADD THIS LINE */
     text-decoration: none;
     color: var(--text-secondary);
     font-size: 0.875rem;
@@ -347,7 +348,7 @@ body.menu-open {
 
 .nav-links a:hover span,
 .nav-links a.active span {
-    transform: translateY(-100%);
+    transform: translateY(-30%);
     color: var(--accent);
 }
 
