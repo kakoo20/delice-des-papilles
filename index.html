@@ -3,348 +3,538 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Délice des Papilles | Pizzeria & Pâtisserie - Béjaïa</title>
+    <title>Délice des Papilles | Pizzeria & Pâtisserie — Béjaïa</title>
     <link rel="icon" type="image/png" href="favicon.png">
-
-<link rel="apple-touch-icon" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <img src="favicon.png" alt="Logo" class="loader-logo">
+            <div class="loader-text">
+                <span>D</span><span>é</span><span>l</span><span>i</span><span>c</span><span>e</span>
+                <span class="space"></span>
+                <span>d</span><span>e</span><span>s</span>
+                <span class="space"></span>
+                <span>P</span><span>a</span><span>p</span><span>i</span><span>l</span><span>l</span><span>e</span><span>s</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
-    <img src="favicon.png" alt="Délice des Papilles Logo" class="logo-img">
-    Délice des Papilles
-</a>
+            <a href="#accueil" class="logo">
+                <img src="favicon.png" alt="Délice des Papilles">
+                <div class="logo-text">
+                    <span class="logo-title">Délice des Papilles</span>
+                    <span class="logo-sub">Pizzeria · Pâtisserie</span>
+                </div>
+            </a>
+
             <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#apropos">À Propos</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#avis">Avis</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil" data-text="Accueil"><span>Accueil</span></a></li>
+                <li><a href="#apropos" data-text="À Propos"><span>À Propos</span></a></li>
+                <li><a href="#menu" data-text="Menu"><span>Menu</span></a></li>
+                <li><a href="#avis" data-text="Avis"><span>Avis</span></a></li>
+                <li><a href="#contact" data-text="Contact"><span>Contact</span></a></li>
             </ul>
-            <div class="mobile-menu" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="nav-actions">
+                <a href="tel:0783145420" class="nav-phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu">
+        <div class="mobile-menu-bg"></div>
+        <ul class="mobile-links">
+            <li><a href="#accueil" onclick="toggleMenu()">Accueil</a></li>
+            <li><a href="#apropos" onclick="toggleMenu()">À Propos</a></li>
+            <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
+            <li><a href="#avis" onclick="toggleMenu()">Avis</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+        <div class="mobile-footer">
+            <a href="tel:0783145420" class="mobile-phone">0783 14 54 20</a>
+            <div class="mobile-social">
+                <a href="https://www.facebook.com/share/18ao5Qve84/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/delice.des.papilles" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@votrecompte" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
     <section class="hero" id="accueil">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="hero-badge">✨ Ouvert 7j/7 - 8h à 23h</span>
-                <h1>Délice des <span>Papilles</span></h1>
-                <p class="hero-subtitle">Pizzeria & Pâtisserie artisanale à Béjaïa. Découvrez nos pizzas cuites au feu de bois et nos pâtisseries faites maison dans une ambiance chaleureuse et conviviale.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        📍 Nous Trouver
-                    </a>
-                    <a href="tel:0783145420" class="btn btn-secondary">
-                        📞 0783 14 54 20
-                    </a>
-                </div>
+        <div class="hero-bg">
+            <div class="hero-bg-img"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-grain"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge" data-reveal>
+                <span class="badge-dot"></span>
+                <span>Ouvert 7j/7 — 8h à 23h</span>
             </div>
-            <div class="hero-image">
-                <div class="hero-image-container">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=500&fit=crop" alt="Pizza artisanale">
-                    <div class="floating-card left">
-                        <span class="floating-card-icon">🥐</span>
-                        <div class="floating-card-text">
-                            <strong>Pâtisserie</strong>
-                            Fait Maison
+
+            <h1 class="hero-title" data-reveal>
+                <span class="line">L'Art de la</span>
+                <span class="line accent">Gastronomie</span>
+                <span class="line">à Béjaïa</span>
+            </h1>
+
+            <p class="hero-desc" data-reveal>
+                Pizzeria & Pâtisserie artisanale. Pizzas au feu de bois et créations sucrées faites maison, 
+                dans une ambiance où tradition et modernité se rencontrent.
+            </p>
+
+            <div class="hero-actions" data-reveal>
+                <a href="#menu" class="btn btn-primary magnetic">
+                    <span>Découvrir le Menu</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-outline magnetic">
+                    <span>Nous Trouver</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-item" data-reveal>
+                <span class="stat-num">15+</span>
+                <span class="stat-label">Ans d'expérience</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-reveal>
+                <span class="stat-num">20+</span>
+                <span class="stat-label">Variétés de pizzas</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-reveal>
+                <span class="stat-num">1000+</span>
+                <span class="stat-label">Clients satisfaits</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Bento Grid -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">Notre Expertise</span>
+                <h2 class="section-title">Trois Univers,<br><em>Une Passion</em></h2>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card bento-large" data-reveal>
+                    <div class="bento-glow"></div>
+                    <div class="bento-content">
+                        <div class="bento-icon">
+                            <i class="fas fa-fire-burner"></i>
                         </div>
+                        <h3>Pizza au Feu de Bois</h3>
+                        <p>Pâte fraîche préparée quotidiennement, cuisson authentique au feu de bois, ingrédients soigneusement sélectionnés pour une expérience italienne revisitée à la sauce algérienne.</p>
+                        <a href="#menu" class="bento-link">Voir les pizzas <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="floating-card right">
-                        <span class="floating-card-icon">⭐</span>
-                        <div class="floating-card-text">
-                            <strong>4.1/5</strong>
-                            Avis Clients
+                    <div class="bento-visual">
+                        <div class="visual-circle"></div>
+                    </div>
+                </div>
+
+                <div class="bento-card" data-reveal>
+                    <div class="bento-glow"></div>
+                    <div class="bento-content">
+                        <div class="bento-icon">
+                            <i class="fas fa-cake-candles"></i>
                         </div>
+                        <h3>Pâtisserie Fine</h3>
+                        <p>Crêpes, gaufres, donuts et pâtisseries algériennes traditionnelles préparées avec amour et savoir-faire.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card" data-reveal>
+                    <div class="bento-glow"></div>
+                    <div class="bento-content">
+                        <div class="bento-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <h3>Café & Boissons</h3>
+                        <p>Café arabica, jus frais pressés, smoothies et boissons chaudes pour toutes les envies.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="features">
-        <div class="features-grid">
-            <div class="feature-card scroll-reveal">
-                <div class="feature-icon">🍕</div>
-                <h3>Pizza Authentique</h3>
-                <p>Pizzas cuites au feu de bois avec pâte fraîche préparée quotidiennement et ingrédients de qualité.</p>
-            </div>
-            <div class="feature-card scroll-reveal">
-                <div class="feature-icon">🧁</div>
-                <h3>Pâtisserie Fine</h3>
-                <p>Crêpes, gaufres, donuts et pâtisseries algériennes traditionnelles préparées avec amour.</p>
-            </div>
-            <div class="feature-card scroll-reveal">
-                <div class="feature-icon">☕</div>
-                <h3>Café & Boissons</h3>
-                <p>Café arabica, jus frais pressés, smoothies et boissons chaudes pour toutes les envies.</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- About Section -->
     <section class="about" id="apropos">
-        <div class="about-container">
-            <div class="about-image scroll-reveal">
-                <div class="about-image-main">
-                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=400&fit=crop" alt="Intérieur du restaurant">
-                </div>
-                <div class="experience-badge">
-                    <span class="years">15+</span>
-                    <span class="text">Ans d'expérience</span>
-                </div>
-            </div>
-            <div class="about-content scroll-reveal">
-                <h2>Une Histoire de <span>Passion</span></h2>
-                <p>Situé à El Kseur, près de la Gare routière de Berchiche, El Kseur, Délice des Papilles est bien plus qu'un simple restaurant. C'est un lieu de rencontre où la tradition culinaire algérienne rencontre la modernité.</p>
-                <div class="about-stats">
-                    <div class="stat">
-                        <h4>20+</h4>
-                        <p>Variétés de pizzas</p>
+        <div class="about-bg-text">PASSION</div>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual" data-reveal>
+                    <div class="about-image-wrapper">
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=600&fit=crop" alt="Intérieur chaleureux">
+                        </div>
+                        <div class="about-frame"></div>
                     </div>
-                    <div class="stat">
-                        <h4>25+</h4>
-                        <p>Pâtisseries uniques</p>
+                    <div class="about-floating-card">
+                        <span class="floating-num">15</span>
+                        <span class="floating-text">Années d'excellence<br>culinaire</span>
                     </div>
-                    <div class="stat">
-                        <h4>1000+</h4>
-                        <p>Clients satisfaits</p>
+                </div>
+
+                <div class="about-content" data-reveal>
+                    <span class="section-eyebrow">Notre Histoire</span>
+                    <h2 class="section-title">Une Histoire de<br><em>Passion & Tradition</em></h2>
+                    <p class="about-text">
+                        Situé à El Kseur, près de la Gare routière de Berchiche, <strong>Délice des Papilles</strong> est bien plus qu'un simple restaurant. C'est un lieu de rencontre où la tradition culinaire algérienne rencontre la modernité.
+                    </p>
+                    <p class="about-text">
+                        Chaque plat raconte une histoire — celle d'une famille passionnée par l'art de la table, qui depuis plus de 15 ans, partage son amour de la cuisine authentique avec Béjaïa et ses visiteurs.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ingrédients frais & locaux</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Recettes transmises de génération</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ambiance chaleureuse garantie</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="menu-preview" id="menu">
-        <div class="section-header scroll-reveal">
-            <h2>Nos Spécialités</h2>
-            <p>Découvrez une sélection de nos plats les plus appréciés, préparés avec des ingrédients frais et locaux.</p>
-        </div>
-        
-        <div class="menu-tabs scroll-reveal">
-            <button class="tab-btn active" onclick="filterMenu('all', event)">Tout</button>
-            <button class="tab-btn" onclick="filterMenu('pizza', event)">Pizzas</button>
-            <button class="tab-btn" onclick="filterMenu('patisserie', event)">Pâtisseries</button>
-            <button class="tab-btn" onclick="filterMenu('boisson', event)">Boissons</button>
-        </div>
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header center" data-reveal>
+                <span class="section-eyebrow">La Carte</span>
+                <h2 class="section-title">Nos <em>Spécialités</em></h2>
+                <p class="section-subtitle">Découvrez une sélection de nos plats les plus appréciés, préparés avec des ingrédients frais et locaux.</p>
+            </div>
 
-        <div class="menu-grid" id="menuGrid">
-            <div class="menu-item" data-category="pizza">
-                <div class="menu-item-image">🍕</div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3>Pizza Margherita</h3>
-                        <span class="price">400 DA</span>
-                    </div>
-                    <p>Sauce tomate, mozzarella fraîche, basilic et huile d'olive extra vierge.</p>
-                </div>
+            <div class="menu-tabs" data-reveal>
+                <button class="tab-btn active" data-category="all">Tout</button>
+                <button class="tab-btn" data-category="pizza">Pizzas</button>
+                <button class="tab-btn" data-category="patisserie">Pâtisseries</button>
+                <button class="tab-btn" data-category="boisson">Boissons</button>
             </div>
-            <div class="menu-item" data-category="pizza">
-                <div class="menu-item-image">🥩</div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3>Pizza Méchoui</h3>
-                        <span class="price">650 DA</span>
+
+            <div class="menu-grid" id="menuGrid">
+                <article class="menu-card" data-category="pizza" data-reveal>
+                    <div class="menu-card-visual">
+                        <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop')"></div>
+                        <div class="menu-card-overlay"></div>
+                        <span class="menu-card-badge">Populaire</span>
                     </div>
-                    <p>Agneau méchoui, oignons, poivrons, sauce tomate épicée et fromage.</p>
-                </div>
-            </div>
-            <div class="menu-item" data-category="patisserie">
-                <div class="menu-item-image">🥐</div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3>Crêpe Nutella</h3>
-                        <span class="price">150 DA</span>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Pizza Margherita</h3>
+                            <span class="menu-card-price">400 DA</span>
+                        </div>
+                        <p>Sauce tomate, mozzarella fraîche, basilic et huile d'olive extra vierge.</p>
                     </div>
-                    <p>Crêpe fine et moelleuse garnie de Nutella et fruits frais de saison.</p>
-                </div>
-            </div>
-            <div class="menu-item" data-category="patisserie">
-                <div class="menu-item-image">🍩</div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3>Donuts Glacés</h3>
-                        <span class="price">80 DA</span>
+                </article>
+
+                <article class="menu-card" data-category="pizza" data-reveal>
+                    <div class="menu-card-visual">
+                        <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop')"></div>
+                        <div class="menu-card-overlay"></div>
                     </div>
-                    <p>Donuts faits maison avec glaçage au choix : chocolat, fraise ou caramel.</p>
-                </div>
-            </div>
-            <div class="menu-item" data-category="boisson">
-                <div class="menu-item-image">☕</div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3>Café Arabica</h3>
-                        <span class="price">60 DA</span>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Pizza Méchoui</h3>
+                            <span class="menu-card-price">650 DA</span>
+                        </div>
+                        <p>Agneau méchoui, oignons, poivrons, sauce tomate épicée et fromage fondant.</p>
                     </div>
-                    <p>Café corsé d'Algérie, servi avec une pâtisserie orientale.</p>
-                </div>
-            </div>
-            <div class="menu-item" data-category="patisserie">
-                <div class="menu-item-image">🧇</div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3>Gaufre Liégeoise</h3>
-                        <span class="price">200 DA</span>
+                </article>
+
+                <article class="menu-card" data-category="patisserie" data-reveal>
+                    <div class="menu-card-visual">
+                        <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=400&h=300&fit=crop')"></div>
+                        <div class="menu-card-overlay"></div>
                     </div>
-                    <p>Gaufre croustillante, sucre perlé, chantilly et coulis de fruits rouges.</p>
-                </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Crêpe Nutella</h3>
+                            <span class="menu-card-price">150 DA</span>
+                        </div>
+                        <p>Crêpe fine et moelleuse garnie de Nutella et fruits frais de saison.</p>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="patisserie" data-reveal>
+                    <div class="menu-card-visual">
+                        <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=300&fit=crop')"></div>
+                        <div class="menu-card-overlay"></div>
+                        <span class="menu-card-badge">Nouveau</span>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Donuts Glacés</h3>
+                            <span class="menu-card-price">80 DA</span>
+                        </div>
+                        <p>Donuts faits maison avec glaçage au choix : chocolat, fraise ou caramel.</p>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="boisson" data-reveal>
+                    <div class="menu-card-visual">
+                        <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop')"></div>
+                        <div class="menu-card-overlay"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Café Arabica</h3>
+                            <span class="menu-card-price">60 DA</span>
+                        </div>
+                        <p>Café corsé d'Algérie, servi avec une pâtisserie orientale.</p>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="patisserie" data-reveal>
+                    <div class="menu-card-visual">
+                        <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=400&h=300&fit=crop')"></div>
+                        <div class="menu-card-overlay"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Gaufre Liégeoise</h3>
+                            <span class="menu-card-price">200 DA</span>
+                        </div>
+                        <p>Gaufre croustillante, sucre perlé, chantilly et coulis de fruits rouges.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
+    <!-- Reviews Section -->
     <section class="reviews" id="avis">
-    <div class="section-header scroll-reveal">
-        <h2>Ce que disent nos <span>Clients</span></h2>
-        <p>Retrouvez les avis de nos clients sur Google Maps</p>
-    </div>
+        <div class="reviews-bg"></div>
+        <div class="container">
+            <div class="section-header center" data-reveal>
+                <span class="section-eyebrow">Témoignages</span>
+                <h2 class="section-title">Ce que disent nos <em>Clients</em></h2>
+            </div>
 
-    <div class="reviews-container scroll-reveal">
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                <p class="review-text">"Ma réponse se divise en 2 pour se qui est du site et de la qualité de la nourriture tout était parfait. Le service de notre serveuse était bien. Jeune fille très sympathique et attentionné"</p>
-                <div class="review-user">
-                    <div class="user-info">
-                        <strong>Hellal H.</strong>
-                        <span>Local Guide • Google Maps</span>
+            <div class="reviews-grid" data-reveal>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Ma réponse se divise en 2 pour ce qui est du site et de la qualité de la nourriture, tout était parfait. Le service de notre serveuse était bien. Jeune fille très sympathique et attentionnée."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">H</div>
+                        <div class="author-info">
+                            <strong>Hellal H.</strong>
+                            <span>Local Guide · Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card featured">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+                    </div>
+                    <p class="review-text">"Good food, good staff, everything was good in general. I recommend it to everyone visiting Béjaïa. The pizza is a must-try!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">Y</div>
+                        <div class="author-info">
+                            <strong>Yahia D.</strong>
+                            <span>Avis Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Je recommande cet endroit. Serveuse top, les pizzas le point fort du restaurant... Un vrai délice pour les papilles ! 👍👍"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">F</div>
+                        <div class="author-info">
+                            <strong>Farida A.</strong>
+                            <span>Avis Google</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="review-card">
-                <div class="review-stars">⭐⭐⭐⭐</div>
-                <p class="review-text">"Good food, good staff, everything was good in general i recommend it"</p>
-                <div class="review-user">
-                    <div class="user-info">
-                        <strong>Yahia D.</strong>
-                        <span>Avis Google</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                <p class="review-text">"Je recommande cet endroit. Serveuse top, les pizzas le point fort du restaurant...👍👍 …"</p>
-                <div class="review-user">
-                    <div class="user-info">
-                        <strong>Farida A.</strong>
-                        <span>Avis Google</span>
-                    </div>
-                </div>
+            <div class="reviews-cta" data-reveal>
+                <a href="https://maps.app.goo.gl/PefXxU3RwHGUaTs68" target="_blank" class="btn btn-outline btn-large">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Voir tous les avis sur Google Maps</span>
+                </a>
             </div>
         </div>
-        
-        <div class="google-badge-container">
-            <a href="https://maps.app.goo.gl/PefXxU3RwHGUaTs68" target="_blank" class="google-badge">
-                <i class="fa-solid fa-location-dot" style="color: #EA4335;"></i>
-                Voir tous les avis sur Google Maps
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
-    <section class="info-section" id="contact">
-        <div class="info-container">
-            <div class="info-content scroll-reveal">
-                <h2>Venez Nous <span>Rencontrer</span></h2>
-                <div class="info-cards">
-                    <div class="info-card">
-                        <div class="info-icon">📍</div>
-                        <div>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.43577382405!2d4.8554283!3d36.6881987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f2d4f296316207%3A0xc3d1f65d6487e4c!2sGare%20Routi%C3%A8re%20de%20Berchiche!5e0!3m2!1sfr!2sdz!4v1711234567890!5m2!1sfr!2sdz" 
+                width="100%" 
+                height="100%" 
+                style="border:0; filter: grayscale(0.6) contrast(1.1);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-overlay"></div>
+        </div>
+
+        <div class="contact-panel">
+            <div class="contact-panel-inner" data-reveal>
+                <span class="section-eyebrow">Rendez-nous visite</span>
+                <h2 class="section-title">Venez Nous<br><em>Rencontrer</em></h2>
+
+                <div class="contact-info">
+                    <div class="info-row">
+                        <div class="info-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="info-text">
                             <h4>Adresse</h4>
                             <p>Gare routière, Berchiche<br>El Kseur, Béjaïa, Algérie</p>
                         </div>
                     </div>
-                    <div class="info-card">
-                        <div class="info-icon">⏰</div>
-                        <div>
+
+                    <div class="info-row">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-text">
                             <h4>Horaires</h4>
-                            <p>Tous les jours : 08h00 - 23h00<br>Service continu, 7j/7</p>
+                            <p>Tous les jours : 08h00 – 23h00<br><span class="badge-open">Ouvert maintenant</span></p>
                         </div>
                     </div>
-                    <div class="info-card">
-                        <div class="info-icon">📞</div>
-                        <div>
+
+                    <div class="info-row">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
                             <h4>Téléphone</h4>
-                            <p>0542 40 66 22<br>Commandes et réservations</p>
+                            <p><a href="tel:0783145420">0783 14 54 20</a><br><a href="tel:0542406622">0542 40 66 22</a></p>
                         </div>
                     </div>
                 </div>
+
+                <div class="contact-actions">
+                    <a href="https://maps.app.goo.gl/ALEvUc21nsCSx7n49" target="_blank" class="btn btn-primary magnetic">
+                        <i class="fas fa-directions"></i>
+                        <span>Obtenir l'itinéraire</span>
+                    </a>
+                </div>
             </div>
-            
-            <div class="map-container scroll-reveal">
-    <div class="map-frame" style="height: 300px; width: 100%; border-radius: 15px; overflow: hidden; margin-bottom: 1.5rem;">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.43577382405!2d4.8554283!3d36.6881987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f2d4f296316207%3A0xc3d1f65d6487e4c!2sGare%20Routi%C3%A8re%20de%20Berchiche!5e0!3m2!1sfr!2sdz!4v1711234567890!5m2!1sfr!2sdz" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-    <button class="directions-btn" onclick="openMap()">
-        📍 Obtenir l'itinéraire
-    </button>
-</div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>Délice des Papilles</h3>
-                <p>Pizzeria et pâtisserie artisanale à Béjaïa. Des saveurs authentiques, une ambiance chaleureuse et un service de qualité depuis plus de 15 ans.</p>
-                <div class="social-links">
-    <a href="https://www.facebook.com/share/18ao5Qve84/" target="_blank" title="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/delice.des.papilles?igsh=bWtlcW90cXY0NDlj" target="_blank" title="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a href="https://www.tiktok.com/@votrecompte" target="_blank" title="TikTok">
-        <i class="fa-brands fa-tiktok"></i>
-    </a>
-</div>
-            </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#apropos">À Propos</a></li>
-                    <li><a href="#menu">Notre Menu</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#">Sur Place</a></li>
-                    <li><a href="#">À Emporter</a></li>
-                    <li><a href="#">Livraison</a></li>
-                    <li><a href="#">Événements</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:0542406622">0783 14 54 20</a></li>
-                    <li><a href="#">Berchiche, El Kseur</a></li>
-                    <li><a href="#">Béjaïa, Algérie</a></li>
-                </ul>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="favicon.png" alt="Logo">
+                            <div>
+                                <h3>Délice des Papilles</h3>
+                                <span>Pizzeria · Pâtisserie</span>
+                            </div>
+                        </div>
+                        <p>Pizzeria et pâtisserie artisanale à Béjaïa. Des saveurs authentiques, une ambiance chaleureuse et un service de qualité depuis plus de 15 ans.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/share/18ao5Qve84/" target="_blank" class="magnetic" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/delice.des.papilles" target="_blank" class="magnetic" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@votrecompte" target="_blank" class="magnetic" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links-col">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#accueil">Accueil</a></li>
+                            <li><a href="#apropos">À Propos</a></li>
+                            <li><a href="#menu">Notre Menu</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Sur Place</a></li>
+                            <li><a href="#">À Emporter</a></li>
+                            <li><a href="#">Livraison</a></li>
+                            <li><a href="#">Événements</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="tel:0783145420">0783 14 54 20</a></li>
+                            <li><a href="tel:0542406622">0542 40 66 22</a></li>
+                            <li><span>Berchiche, El Kseur</span></li>
+                            <li><span>Béjaïa, Algérie</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>© 2026 Délice des Papilles. Tous droits réservés. | Conçu avec ❤️ à Béjaïa</p>
+            <div class="container">
+                <p>© 2026 Délice des Papilles. Tous droits réservés.</p>
+                <p class="footer-credit">Conçu avec passion à Béjaïa</p>
+            </div>
         </div>
     </footer>
 
